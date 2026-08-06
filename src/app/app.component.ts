@@ -6,6 +6,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
+import { EducationComponent } from './education/education.component';
+import { CertificatesComponent } from './certificates/certificates.component';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +16,12 @@ import { SkillsComponent } from './skills/skills.component';
     RouterOutlet,
     HeroComponent,
     AboutComponent,
-    ContactComponent,
-    ExperienceComponent,
-    ProjectsComponent,
+    EducationComponent,
     SkillsComponent,
+    ExperienceComponent,
+    CertificatesComponent,
+    ProjectsComponent,
+    ContactComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
