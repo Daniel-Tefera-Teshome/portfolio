@@ -9,6 +9,7 @@ export interface ProjectItem {
   link: string;
   linkLabel: string;
   image?: string;
+  images?: string[];
   featured?: boolean;
 }
 
@@ -24,18 +25,23 @@ export class ProjectsComponent {
   readonly featuredProjects: ProjectItem[] = [
     {
       title: 'Prana Events Platform',
-      description: 'Angular web application for event management — responsive UI, REST API integration, and production optimization.',
+      description: 'Angular event management system with dashboard, event listing, filtering, and admin workflows for Prana Events.',
       tags: ['Angular', 'TypeScript', 'REST API'],
       link: 'https://pranaevents.net/',
       linkLabel: 'Visit Website',
+      image: 'assets/projects/prana-events.png',
       featured: true,
     },
     {
       title: 'Procurement Information Report',
-      description: 'Angular reporting module with dynamic filtering, tabular views, and real-time data integration.',
-      tags: ['Angular', 'NG-ZORRO', 'Tailwind'],
+      description: 'Enterprise EGP reporting module with procurement statistics, interactive charts, sidebar filters, and budget analytics dashboards.',
+      tags: ['Angular', 'NG-ZORRO', 'Data Visualization'],
       link: 'https://training.egp.gov.et/egp/records/procurement-information/portal',
       linkLabel: 'View Project',
+      images: [
+        'assets/projects/procurement-report.png',
+        'assets/projects/procurement-statistics.png',
+      ],
       featured: true,
     },
     {
