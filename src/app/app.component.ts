@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { ThemeService } from './services/theme.service';
+import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
 import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
@@ -22,10 +24,17 @@ import { CertificatesComponent } from './certificates/certificates.component';
     CertificatesComponent,
     ProjectsComponent,
     ContactComponent,
+    ThemeToggleComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  private readonly themeService = inject(ThemeService);
+
   title = 'my-porfolio2';
+
+  ngOnInit(): void {
+    this.themeService.init();
+  }
 }
