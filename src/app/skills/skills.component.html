@@ -1,82 +1,22 @@
-<section class="bg-gray-50 dark:bg-gray-900 px-6 py-20">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
-        🚀 Skills & Technologies
-      </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">
-        Tools & technologies I work with to build fast, modern, and responsive web applications.
-      </p>
+<section id="skills" class="section-default section-container">
+  <app-section-header
+    eyebrow="Skills"
+    title="Technical Expertise"
+    subtitle="Technologies and tools I use to build scalable, maintainable web applications."
+  ></app-section-header>
 
-      <div class="mb-10">
-        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-6">Frontend & Frameworks</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">Angular</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">TypeScript</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">JavaScript</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">HTML5</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">Tailwind CSS</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">RxJS</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">NG-ZORRO</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">Angular Material</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">NgRx</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">NGXS</span>
-          </div>
+  <div class="space-y-10">
+    @for (group of groups; track group.title) {
+      <div appScrollReveal>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+          {{ group.title }}
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          @for (skill of group.skills; track skill) {
+            <span class="skill-pill">{{ skill }}</span>
+          }
         </div>
       </div>
-
-      <div class="mb-10">
-        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-6">Tools & DevOps</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">NX Monorepo</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">Git</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">CI/CD</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">Docker</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-6">Programming & Other</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">C / C++</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">Java</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">MS SQL Server</span>
-          </div>
-          <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-4 rounded-lg text-center">
-            <span class="text-lg font-semibold text-gray-700 dark:text-white">Networking</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    }
+  </div>
+</section>

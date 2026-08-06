@@ -1,73 +1,43 @@
-<section class="bg-gray-50 dark:bg-gray-900 px-6 py-20">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-10 text-center">
-        💼 Experience
-      </h2>
-  
-      <div class="space-y-6">
-        <!-- Prana Events -->
-        <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition rounded-xl p-6">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
-            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
-              Senior Frontend Developer — Prana Events
-            </h3>
-            <span class="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-              Nov 2023 – Present
-            </span>
-          </div>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Addis Ababa, Ethiopia · <a href="https://pranaevents.net/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">pranaevents.net</a></p>
-          <p class="text-gray-600 dark:text-gray-300">
-            Develop and maintain Angular web applications for event management platforms, delivering responsive user interfaces and seamless API integrations.
-          </p>
-          <ul class="list-disc list-inside mt-4 text-gray-600 dark:text-gray-300 space-y-1">
-            <li>Developed and maintained Angular web applications</li>
-            <li>Built responsive user interfaces with modern UI libraries</li>
-            <li>Integrated REST APIs and collaborated with development teams</li>
-            <li>Tested, debugged, and optimized application performance</li>
-          </ul>
-        </div>
+<section id="experience" class="section-alt section-container">
+  <app-section-header
+    eyebrow="Experience"
+    title="Work History"
+    subtitle="Professional experience building enterprise and event-management applications."
+  ></app-section-header>
 
-        <!-- Perago Information System -->
-        <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition rounded-xl p-6">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
-            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
-              Frontend Web Developer — Perago Information System PLC
-            </h3>
-            <span class="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-              Jun 2022 – Present
-            </span>
+  <div class="relative ml-3 border-l-2 border-indigo-200 dark:border-indigo-900 md:ml-4">
+    @for (job of experiences; track job.company; let last = $last) {
+      <article class="relative pb-12 pl-8 md:pl-10" [class.pb-0]="last" appScrollReveal>
+        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-[3px] border-indigo-600 bg-white dark:bg-slate-950"></div>
+
+        <div class="card">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 dark:text-white">{{ job.role }}</h3>
+              <p class="mt-1 font-medium text-indigo-600 dark:text-indigo-400">{{ job.company }}</p>
+            </div>
+            <span class="tag shrink-0">{{ job.period }}</span>
           </div>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Addis Ababa, Ethiopia · <a href="http://peragosystems.com/home" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">peragosystems.com</a></p>
-          <p class="text-gray-600 dark:text-gray-300">
-            Angular developer working on enterprise information systems, adding new features and resolving production issues.
+
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            {{ job.location }} ·
+            <a [href]="job.url" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400">
+              {{ job.url.replace('https://', '').replace('http://', '').split('/')[0] }}
+            </a>
           </p>
-          <ul class="list-disc list-inside mt-4 text-gray-600 dark:text-gray-300 space-y-1">
-            <li>Developed Angular features for existing enterprise systems</li>
-            <li>Added new functionality to production applications</li>
-            <li>Fixed production bugs and improved system stability</li>
+
+          <p class="mt-4 text-slate-600 dark:text-slate-300">{{ job.summary }}</p>
+
+          <ul class="mt-4 space-y-2">
+            @for (point of job.highlights; track point) {
+              <li class="flex gap-2 text-sm text-slate-600 dark:text-slate-300">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span>
+                {{ point }}
+              </li>
+            }
           </ul>
         </div>
-  
-        <!-- Woldia University Lecturer -->
-        <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition rounded-xl p-6">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
-            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
-              University Lecturer — Woldia University
-            </h3>
-            <span class="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-              Sep 2019 – Jul 2022
-            </span>
-          </div>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Woldia, Ethiopia · <a href="https://www.wldu.edu.et" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">wldu.edu.et</a></p>
-          <p class="text-gray-600 dark:text-gray-300">
-            Lectured and mentored Computer Science students while contributing to web application development projects.
-          </p>
-          <ul class="list-disc list-inside mt-4 text-gray-600 dark:text-gray-300 space-y-1">
-            <li>Lectured students in Computer Science courses</li>
-            <li>Provided academic counseling and student guidance</li>
-            <li>Developed web applications for university use</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      </article>
+    }
+  </div>
+</section>

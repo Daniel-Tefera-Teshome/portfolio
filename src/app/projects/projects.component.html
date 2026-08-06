@@ -1,73 +1,76 @@
-<section class="bg-gray-100 dark:bg-gray-900 px-6 py-20">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-12 text-center">
-        🚀 Projects
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Project Card -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition p-6">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Procurement Information Report Feature</h3>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">An Angular-based reporting module for procurement insights.</p>
-          <a href="https://training.egp.gov.et/egp/records/procurement-information/portal" target="_blank"
-             class="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-            Go to the project →
+<section id="projects" class="section-alt section-container">
+  <app-section-header
+    eyebrow="Portfolio"
+    title="Selected Projects"
+    subtitle="Highlighted work from professional roles, enterprise systems, and academic research."
+  ></app-section-header>
+
+  <div class="grid gap-8 md:grid-cols-2">
+    @for (project of featuredProjects; track project.title) {
+      <article class="card overflow-hidden p-0" appScrollReveal>
+        <div class="flex h-44 items-center justify-center bg-gradient-to-br from-indigo-600 to-violet-700">
+          @if (project.image) {
+            <img [src]="project.image" [alt]="project.title" class="h-full w-full object-cover" />
+          } @else {
+            <div class="text-center px-6">
+              <svg class="mx-auto h-10 w-10 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <p class="mt-2 text-sm font-medium text-white/80">Screenshot coming soon</p>
+            </div>
+          }
+        </div>
+        <div class="p-6">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white">{{ project.title }}</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{{ project.description }}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            @for (tag of project.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+          <a
+            [href]="project.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-4 inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400"
+          >
+            {{ project.linkLabel }}
+            <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
         </div>
-  
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition p-6">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">HR System – Woldia University</h3>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">BSc thesis project — an automated human resource management system for Woldia University, developed in PHP.</p>
-          <a href="https://github.com/Daniel-Tefera-Teshome/WLDU-HR-System" target="_blank"
-             class="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-            GitHub Repository →
+      </article>
+    }
+  </div>
+
+  @if (showAll()) {
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      @for (project of otherProjects; track project.title) {
+        <article class="card" appScrollReveal>
+          <h3 class="text-base font-semibold text-slate-900 dark:text-white">{{ project.title }}</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{{ project.description }}</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            @for (tag of project.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+          <a
+            [href]="project.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-3 inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400"
+          >
+            {{ project.linkLabel }} →
           </a>
-        </div>
-  
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition p-6">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Organizational Structure - Perago Systems</h3>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">Built with Angular as part of a job assignment to model organizational hierarchy.</p>
-          <a href="https://github.com/Daniel-Tefera-Teshome/organizational-structure" target="_blank"
-             class="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-            GitHub Repository →
-          </a>
-        </div>
-  
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition p-6">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Cost Sharing System</h3>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">Developed in C++ as a course project to manage student cost sharing efficiently.</p>
-          <a href="https://github.com/Daniel-Tefera-Teshome/cost-sharing-system" target="_blank"
-             class="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-            GitHub Repository →
-          </a>
-        </div>
-  
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition p-6">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Car Plate Recognition System</h3>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">AI-based system developed in MATLAB to identify and extract license plate numbers.</p>
-          <a href="https://github.com/Daniel-Tefera-Teshome/car-plate-recognition" target="_blank"
-             class="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-            GitHub Repository →
-          </a>
-        </div>
-  
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition p-6">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Lounge Management System – Woldia University</h3>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">PHP-based application to manage university lounges and facilities.</p>
-          <a href="https://github.com/Daniel-Tefera-Teshome/Lounge-management-system-for-wldu" target="_blank"
-             class="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-            GitHub Repository →
-          </a>
-        </div>
-  
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition p-6">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Cryptography Encryption/Decryption App</h3>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">MSc thesis research — an enhanced hybrid algorithm combining Modified Caesar and Vigenère cipher without key repetition.</p>
-          <a href="https://github.com/Daniel-Tefera-Teshome/Cryptography" target="_blank"
-             class="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-            GitHub Repository →
-          </a>
-        </div>
-      </div>
+        </article>
+      }
     </div>
-  </section>
-  
+  }
+
+  <div class="mt-10 text-center">
+    <button type="button" (click)="toggleShowAll()" class="btn-secondary">
+      {{ showAll() ? 'Show Less' : 'View More Projects' }}
+    </button>
+  </div>
+</section>

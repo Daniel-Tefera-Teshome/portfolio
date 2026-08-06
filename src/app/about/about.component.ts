@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
+import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [SectionHeaderComponent, ScrollRevealDirective],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
 })
 export class AboutComponent {
-
+  readonly strengths = [
+    'Problem Solving',
+    'Clean Architecture',
+    'Team Collaboration',
+    'Performance Optimization',
+  ];
 }

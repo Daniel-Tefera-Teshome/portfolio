@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,9 +7,69 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
-    @apply transition-colors duration-300;
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-6xl px-6 py-20 md:py-24;
+  }
+
+  .section-alt {
+    @apply bg-slate-50 dark:bg-slate-900/40;
+  }
+
+  .section-default {
+    @apply bg-white dark:bg-slate-950;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-slate-600 dark:text-slate-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition duration-300 hover:bg-indigo-500;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition duration-300 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-600 dark:text-slate-200 dark:hover:border-indigo-400 dark:hover:text-indigo-400;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-xl bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition duration-300 hover:bg-amber-400;
+  }
+
+  .tag {
+    @apply inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300;
+  }
+
+  .skill-pill {
+    @apply rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-indigo-300 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-indigo-500 dark:hover:text-indigo-400;
+  }
+}
+
+@layer utilities {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .scroll-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
