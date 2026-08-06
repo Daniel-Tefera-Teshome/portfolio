@@ -7,6 +7,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { EducationComponent } from './education/education.component';
 import { CertificatesComponent } from './certificates/certificates.component';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ThemeService } from './services/theme.service';
@@ -23,6 +24,7 @@ import { ThemeService } from './services/theme.service';
     ExperienceComponent,
     CertificatesComponent,
     ProjectsComponent,
+    RecommendationsComponent,
     ContactComponent,
     FooterComponent,
   ],
