@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { Component, signal } from '@angular/core';
 import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
 import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
 
@@ -24,13 +23,11 @@ export class ContactComponent {
     { label: 'Addis Ababa, Ethiopia', href: 'https://www.google.com/maps?q=Addis+Ababa,+Ethiopia', external: true },
   ];
 
-  constructor(private notification: NzNotificationService) {}
+  readonly submitted = signal(false);
 
   onSend(event: Event): void {
     event.preventDefault();
-    this.notification.info(
-      'Message Received',
-      'Thank you for reaching out. Please use the email or social links for a direct response.'
-    );
+    this.submitted.set(true);
+    window.setTimeout(() => this.submitted.set(false), 5000);
   }
 }
